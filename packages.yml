@@ -4,4 +4,4 @@ packages:
   - package: godatadriven/dbt_date
     version: 0.10.0
   - package: Snowflake-Labs/dbt_constraints
-    version: 1.0.7
+    version: 1.0.6

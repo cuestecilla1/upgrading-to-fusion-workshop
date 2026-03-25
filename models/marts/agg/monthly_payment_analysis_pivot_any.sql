@@ -39,7 +39,12 @@ monthly_revenue_by_payment_method as (
     from monthly_payment_data
     PIVOT (
         sum(payment_method_revenue)
-        FOR payment_method IN (ANY)  -- PROBLEMATIC: Dynamic columns break static analysis
+        FOR payment_method IN (
+            'credit_card',
+            'bank_transfer',
+            'coupon',
+            'gift_card'
+        )
     ) as pivot_table
 )
 
